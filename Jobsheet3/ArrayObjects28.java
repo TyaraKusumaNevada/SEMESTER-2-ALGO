@@ -27,6 +27,5 @@ public class ArrayObjects28 {
         System.out.println("PersegiPanjang ke-2, panjang:" + ppArray[2].panjang + ", lebar:" + ppArray[2].lebar);
     }
 
-    
-
 }
+
