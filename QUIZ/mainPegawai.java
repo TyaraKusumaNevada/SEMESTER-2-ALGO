@@ -10,7 +10,7 @@ public class mainPegawai {
 
         for (int i = 0; i < pgw.length; i++) {
             System.out.printf("Masukkan detail untuk Pegawai %d:\n", i + 1);
-            System.out.print("Nama: ");
+            System.out.print("nama: ");
             String nama = scanner.next();
             System.out.print("Masa Kerja (Tahun): ");
             int masaKerjaThn = scanner.nextInt();

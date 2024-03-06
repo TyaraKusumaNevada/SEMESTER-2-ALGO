@@ -28,7 +28,7 @@ package QUIZ;
         }
     
         void printData(){
-            System.out.println("Nama: " + nama);
+            System.out.println("nama: " + nama);
             System.out.println("Masa Kerja (Tahun): " + masaKerjaThn);
             System.out.println("Jam Lembur: " + jamLembur);
             System.out.println("Gaji Pokok: " + gajiPokok);
