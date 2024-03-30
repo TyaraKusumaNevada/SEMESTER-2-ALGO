@@ -39,4 +39,15 @@ public class PencarianBuku28 {
             System.out.println("data : " + x + " Tidak ditemukan");
         }
     }
+
+
+
+    public Buku28 FindBuku(int kodeBuku) {
+        Buku28 buku = null;
+        int posisi = FindSeqSearch(kodeBuku);
+        if (posisi != -1) {
+            buku = listBk[posisi];
+        }
+        return buku;
+    }
 }
