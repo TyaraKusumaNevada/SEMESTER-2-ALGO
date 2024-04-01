@@ -27,5 +27,8 @@ public class MainMahasiswa {
     list.selectionSort();
     list.tampil();
     
+    System.out.println("Data mahasiwa setelah sorting asc berdasarkan ipk");
+    list.insertionSort();
+    list.tampil();
     }
 }

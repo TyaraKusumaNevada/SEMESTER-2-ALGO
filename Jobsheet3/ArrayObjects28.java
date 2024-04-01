@@ -11,7 +11,9 @@ public class ArrayObjects28 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
+        System.out.println("Masukkan panjang array");
+        int length = sc.nextInt();
+        PersegiPanjang[] ppArray = new PersegiPanjang[length];
 
         for (int i = 0; i < 3; i++) {
             ppArray[i] = new PersegiPanjang();
@@ -24,8 +26,8 @@ public class ArrayObjects28 {
         }
 
         for (int i = 0; i < 3; i++) {
-            System.out.print("persegi panjang ke-" + i);
-            System.out.print("panjang "+ ppArray[i].panjang + ppArray[i].lebar); 
+            System.out.println("persegi panjang ke-" + i);
+            System.out.println("panjang "+ ppArray[i].panjang + ppArray[i].lebar); 
         }
     }
 }

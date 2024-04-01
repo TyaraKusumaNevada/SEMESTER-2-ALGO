@@ -7,6 +7,7 @@ public class BruteForceDivineConquer {
             int fakto = 1;
             for (int i=1; i<=n; i++){
                 fakto = fakto *i;
+                i++;
             }
             return fakto;
         }

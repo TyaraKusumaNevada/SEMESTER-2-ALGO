@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Fungsi128{
-    static Scanner input04 = new Scanner(System.in);
+    static Scanner input28 = new Scanner(System.in);
     static String [] tokoBunga = {"RoyalGarden 1", "RoyalGarden 2", "RoyalGarden 3", "RoyalGarden 4"};
     static int [][] stock = {
         { 10, 5, 15, 7},

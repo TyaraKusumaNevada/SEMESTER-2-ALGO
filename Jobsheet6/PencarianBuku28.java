@@ -16,10 +16,14 @@ public class PencarianBuku28 {
     }
 
     void tampil() {
-        for (int i = 0; i < idx; i++) {
-            listBk[i].tampilDataBuku();
+        for (Buku28 m : listBk) {
+            if (m != null) {
+            m.tampilDataBuku();
+            }
+
         }
     }
+    
 
     public int FindSeqSearch(int cari) {
         int posisi = -1;
@@ -40,6 +44,17 @@ public class PencarianBuku28 {
         }
     }
 
+    public void TampilData(int x , int pos) {
+        if (pos != -1) {
+            System.out.println("Judul: " + listBk[pos].judulBuku);
+            System.out.println("Tahun Terbit: " + listBk[pos].tahunTerbit);
+            System.out.println("Pengarang: " + listBk[pos].pengarang);
+            System.out.println("Stok: " + listBk[pos].stock);
+          } else {
+            System.out.println("Data " + x + " tidak ditemukan");
+          }
+    }
+
 
 
     public Buku28 FindBuku(int kodeBuku) {
@@ -49,5 +64,22 @@ public class PencarianBuku28 {
             buku = listBk[posisi];
         }
         return buku;
+    }
+
+    public int FindBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >=left){
+            mid = (right) /2;
+            if (cari == listBk[mid].kodeBuku){
+                return (mid);
+            }else if(listBk[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid);
+            }else {
+                return FindBinarySearch(cari, mid, right);
+
+            }
+        }
+        return -1;
+
     }
 }

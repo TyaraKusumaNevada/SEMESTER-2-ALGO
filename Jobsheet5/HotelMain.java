@@ -3,10 +3,10 @@ package Jobsheet5;
 public class HotelMain {
     public static void main(String[] args) {
         HotelService list = new HotelService();
-        Hotel h1 = new Hotel("Sumber Makmur", "TulungAgung", 350000, (byte)3);
-        Hotel h2 = new Hotel("Kreta Kencana", "Blitar", 145000, (byte)2);
-        Hotel h3 = new Hotel("Gudang Garam", "Kediri", 550000, (byte)5);
-        Hotel h4 = new Hotel("Mekar Sari", "Probolinggo", 90000, (byte)1);
+        Hotel h1 = new Hotel("Semar", "Solo", 350000, (byte)3);
+        Hotel h2 = new Hotel("Melati Mulyo", "Blitar", 145000, (byte)2);
+        Hotel h3 = new Hotel("Sekar Sari", "Kediri", 550000, (byte)5);
+        Hotel h4 = new Hotel("Gunung Agung", "Probolinggo", 90000, (byte)1);
     
         list.tambahHotel(h1);
         list.tambahHotel(h2);
