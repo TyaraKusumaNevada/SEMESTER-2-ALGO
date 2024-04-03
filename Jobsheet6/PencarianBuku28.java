@@ -3,7 +3,7 @@ package Jobsheet6;
 import java.util.Scanner;
 
 public class PencarianBuku28 {
-    Buku28 listBk [] = new Buku28 [2];
+    Buku28 listBk [] = new Buku28 [5];
     int idx;
     
     void tambah(Buku28 m) {

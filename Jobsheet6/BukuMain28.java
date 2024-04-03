@@ -5,7 +5,7 @@ public class BukuMain28 {
         Scanner s = new Scanner(System.in);
         Scanner s1 = new Scanner(System.in);
         PencarianBuku28 data = new PencarianBuku28();
-        int jumBuku = 2;
+        int jumBuku = 5;
         System.out.println("-------------------------------------");
         System.out.println("Masukkan data Buku secara urut dari kode buku terkecil : ");
         for (int i = 0; i < jumBuku; i++){
