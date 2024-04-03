@@ -31,7 +31,7 @@ public class Gudang28 {
         if (!cekPenuh()) {
             top++;
             tumpukan[top] = brg;
-            System.out.println("Barang " + brg.nama + " berhasil ditemukan ke Gudang");
+            System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke Gudang");
         } else {
             System.out.println("Gagal! Tumpukan barang di Gudang suduah penuh");
         }
@@ -52,7 +52,7 @@ public class Gudang28 {
     public Barang28 lihatBarangTeratas() {
         if (!cekKosong()) {
             Barang28 barangTeratas = tumpukan[top];
-            System.out.println("Barng teratas: " + barangTeratas.nama);
+            System.out.println("Barang teratas: " + barangTeratas.nama);
             return barangTeratas;
         } else {
             System.out.println("Tumpukan barang kosong.");
@@ -64,7 +64,7 @@ public class Gudang28 {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang di gudang: ");
             for (int i = 0; i <= top; i++) {
-                System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama);
+                System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama, tumpukan[i].kategori);
             }
         }
     }
