@@ -1,6 +1,6 @@
 package Jobsheet6;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class PencarianBuku28 {
     Buku28[] listBK = new Buku28[2];
@@ -21,7 +21,7 @@ public class PencarianBuku28 {
         }
     }
 
-    public int FindSeqSearch(String cari) {
+    public int FindSeqSearchKode(String cari) {
         int posisi = -1;
         for (int j = 0; j < listBK.length; j++) {
             if (listBK[j].kodeBuku.equals(cari)) {
@@ -32,7 +32,7 @@ public class PencarianBuku28 {
         return posisi;
     }
 
-    public Buku28 FindBuku(String cari) {
+    public Buku28 FindBukuKode(String cari) {
         for (Buku28 buku : listBK) {
             if (buku.kodeBuku.equals(cari)) {
                 return buku;
@@ -41,7 +41,7 @@ public class PencarianBuku28 {
         return null;
     }
 
-    public void Tampilposisi(String x, int pos) {
+    public void TampilposisiKode(String x, int pos) {
         if (pos != -1) {
             System.out.println("data : " + x + " ditemukan pada indeks " + pos);
         } else {
@@ -49,7 +49,7 @@ public class PencarianBuku28 {
         }
     }
 
-    public void TampilData(String x, int pos) {
+    public void TampilDataKode(String x, int pos) {
         if (pos != -1) {
             System.out.println("Kode Buku \t : " + x);
             System.out.println("Judul     \t : " + listBK[pos].judulBuku);
@@ -61,7 +61,7 @@ public class PencarianBuku28 {
         }
     }
 
-    public int FindBinarySearch(String cari, int left, int right) {
+    public int FindBinarySearchKode(String cari, int left, int right) {
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (cari.equals(listBK[mid].kodeBuku)) {
@@ -75,23 +75,34 @@ public class PencarianBuku28 {
         return -1;
     }
 
-    public int FindSeqSearchByString(String cari) {
-        int posisi = -1;
+    public int FindSeqSearchJudul(String cari) {
+        int count = 0;
         for (int j = 0; j < listBK.length; j++) {
-            if (listBK[j].kodeBuku.equals(cari)) {
-                posisi = j;
-                break;
+            if (listBK[j].judulBuku.equalsIgnoreCase(cari)) {
+                count++;
             }
         }
-        return posisi;
+        return count;
     }
 
-    public int FindBinarySearchByString(String cari, int left, int right) {
+    public void TampilposisiJudul(String x, int count) {
+        if (count > 1) {
+            System.out.println("Peringatan: Judul buku " + x + " memiliki lebih dari satu hasil.");
+        } else {
+            System.out.println("Judul buku " + x + " ditemukan.");
+        }
+    }
+
+    public void SortJudul() {
+        Arrays.sort(listBK, (a, b) -> a.judulBuku.compareToIgnoreCase(b.judulBuku));
+    }
+
+    public int FindBinarySearchJudul(String cari, int left, int right) {
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (cari.equals(listBK[mid].kodeBuku)) {
+            if (cari.equalsIgnoreCase(listBK[mid].judulBuku)) {
                 return mid;
-            } else if (cari.compareTo(listBK[mid].kodeBuku) < 0) {
+            } else if (cari.compareToIgnoreCase(listBK[mid].judulBuku) < 0) {
                 right = mid - 1;
             } else {
                 left = mid + 1;

@@ -15,10 +15,10 @@ public class BukuMain28 {
             String judulBuku = s1.nextLine();
             System.out.print("Tahun terbit \t : ");
             int tahunTerbit = s1.nextInt();
-            s1.nextLine(); 
+            s1.nextLine();  
             System.out.print("Pengarang \t : ");
             String pengarang = s1.nextLine();
-            System.out.print("Stock \t : ");
+            System.out.print("Stock \t         : ");
             int stock = s1.nextInt();
             s1.nextLine();  
 
@@ -27,31 +27,31 @@ public class BukuMain28 {
         }
 
         System.out.println("Pencarian Data : ");
-        System.out.println("Masukkan kode buku yang dicari: ");
-        System.out.print("Kode buku : ");
+        System.out.println("Masukkan judul buku yang dicari: ");
+        System.out.print("Judul buku : ");
         String cari = s1.nextLine();
         System.out.println("================================");
-        System.out.println("Menggunakan sequential search ");
-        int posisi = data.FindSeqSearch(cari);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
+        System.out.println("Menggunakan sequential search untuk Kode Buku ");
+        int posisi = data.FindSeqSearchKode(cari);
+        data.TampilposisiKode(cari, posisi);
+        data.TampilDataKode(cari, posisi);
 
         System.out.println("================================");
-        System.out.println("Menggunakan binary search");
-        posisi = data.FindBinarySearch(cari, 0, jumBuku - 1);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
+        System.out.println("Menggunakan binary search untuk Kode Buku");
+        posisi = data.FindBinarySearchKode(cari, 0, jumBuku - 1);
+        data.TampilposisiKode(cari, posisi);
+        data.TampilDataKode(cari, posisi);
+
+        data.SortJudul(); 
+        System.out.println("================================");
+        System.out.println("Menggunakan sequential search untuk Judul Buku");
+        int count = data.FindSeqSearchJudul(cari);
+        data.TampilposisiJudul(cari, count);
 
         System.out.println("================================");
-        System.out.println("Menggunakan sequential search untuk String");
-        posisi = data.FindSeqSearchByString(cari);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
-
-        System.out.println("================================");
-        System.out.println("Menggunakan binary search untuk String");
-        posisi = data.FindBinarySearchByString(cari, 0, jumBuku - 1);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
+        System.out.println("Menggunakan binary search untuk Judul Buku");
+        posisi = data.FindBinarySearchJudul(cari, 0, jumBuku - 1);
+        data.TampilposisiKode(cari, posisi);
+        data.TampilDataKode(cari, posisi);
     }
 }
