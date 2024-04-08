@@ -2,37 +2,37 @@ package Jobsheet7;
 
 public class StackKonversi28 {
     int size;
-    int[] tumpukanBiner;
+    int[] tumpukanBiner; 
     int top;
 
-    public StackKonversi28() {
-        this.size = 32;
+    public StackKonversi28(int size) {
+        this.size = 32; //asumsi 32 bit
         tumpukanBiner = new int[size];
         top = -1;
     }
 
-    public boolean isEmpty() {
+    public boolean cekKosong(){
         return top == -1;
     }
 
-    public boolean isFull() {
-        return top == size - 1;
+    public boolean cekPenuh(){
+        return top == size -1;
     }
 
-    public void push (int data) {
-        if (isFull()) {
+    public void push(int data){
+        if(cekPenuh()){
             System.out.println("Stack penuh");
-        }else {
-            top++;
+        } else {
+            top ++;
             tumpukanBiner[top] = data;
         }
     }
 
-    public int pop() {
-        if (isEmpty()) {
-            System.out.println("Stack kosong. ");
+    public int pop(){
+        if(cekKosong()){
+            System.out.println("Stack kosong.");
             return -1;
-        }else {
+        } else {
             int data = tumpukanBiner[top];
             top--;
             return data;
