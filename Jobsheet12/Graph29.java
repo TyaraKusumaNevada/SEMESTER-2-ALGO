@@ -17,6 +17,23 @@ public class Graph29 {
         // list[tujuan].addFirst(asal, jarak); // untuk graf tak berarah
     }
 
+    public void removeEdge(int source, int destination) throws Exception {
+        if (source < 0 || source >= vertex || destination < 0 || destination >= vertex) {
+            throw new Exception("Nilai indeks diluar batas");
+        }
+        
+        // Cek apakah destination ada di list[source]
+        boolean foundSource = list[source].remove(destination);
+    
+        // Jika tidak ditemukan di list[source], coba cari di list[destination]
+        if (!foundSource) {
+            foundSource = list[destination].remove(source);
+        }
+    
+        if (!foundSource) {
+            throw new Exception("Edge tidak ditemukan.");
+        }
+    }
 
     public void degree(int asal) throws Exception {
         int totalIn = 0, totalOut = 0;
@@ -40,36 +57,10 @@ public class Graph29 {
         System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + (totalIn + totalOut));
     }
 
-    public void removeEdge(int source, int destination) throws Exception {
-        if (source < 0 || source >= vertex || destination < 0 || destination >= vertex) {
-            throw new Exception("Nilai indeks diluar batas");
-        }
-        
-        // Cek apakah destination ada di list[source]
-        boolean foundSource = list[source].remove(destination);
-    
-        // Jika tidak ditemukan di list[source], coba cari di list[destination]
-        if (!foundSource) {
-            foundSource = list[destination].remove(source);
-        }
-    
-        if (!foundSource) {
-            throw new Exception("Edge tidak ditemukan.");
-        }
-    }
-
-    public void removeAllEdges() {
-        for(int i = 0; i < vertex; i++) {
-            list[i].clear();
-        }
-        System.out.println("Graf berhasil dikosongkan");
-    }
-
-    public boolean isNeighbour(int node1, int node2) {
-        // Cek apakah node1 dan node2 saling bertetangga
-        Node29 current = list[node1].getHead();
+    public boolean isEdgeExist(int asal, int tujuan) {
+        Node29 current = list[asal].getHead();
         while (current != null) {
-            if (current.data == node2) {
+            if (current.data == tujuan) {
                 return true;
             }
             current = current.next;
@@ -91,4 +82,4 @@ public class Graph29 {
         }
         System.out.println("");
     }
-}
+}   

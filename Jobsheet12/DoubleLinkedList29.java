@@ -26,17 +26,6 @@ public class DoubleLinkedList29 {
         size++;
     }
 
-    public int getJarak(int index) throws Exception {
-        if (isEmpty() || index >= size || index < 0) {
-            throw new Exception("Nilai indeks diluar batas.");
-        }
-        Node29 tmp = head;
-        for (int i = 0; i < index; i++) {
-            tmp = tmp.next;
-        }
-        return tmp.jarak;
-    }
-
     public void addLast(int item, int jarak) {
         if (isEmpty()) {
             addFirst(item, jarak);
@@ -199,5 +188,14 @@ public class DoubleLinkedList29 {
         return tmp.data;
     }
 
-
+    public int getJarak(int index) throws Exception {
+        if (isEmpty() || index >= size || index < 0) {
+            throw new Exception("Nilai indeks diluar batas.");
+        }
+        Node29 tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.jarak;
+    }
 }
